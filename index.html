@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Сукня великих розмірів – стильний образ для жінок plus size</title>
+
+    <!-- Базова SEO-інфа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Стильна сукня великих розмірів для жінок plus size. Комфортна посадка, щільна тканина, 4 трендові кольори: бутилка, індиго, чорний, шоколад. Замовлення через Telegram."
+    />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Canonical (підставиш свою адресу) -->
+    <link rel="canonical" href="https://example.com/dress-plus-size" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product" />
+    <meta
+      property="og:title"
+      content="Сукня великих розмірів для жінок plus size"
+    />
+    <meta
+      property="og:description"
+      content="Стильна сукня великих розмірів з ідеальною посадкою. Кольори: бутилка, індиго, чорний, шоколад."
+    />
+    <meta property="og:url" content="https://example.com/dress-plus-size" />
+    <meta property="og:image" content="https://example.com/546_green.webp" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Сукня великих розмірів – стильний образ"
+    />
+    <meta
+      name="twitter:description"
+      content="Сукня plus size з комфортною посадкою та трендовими кольорами. Замовлення через Telegram."
+    />
+    <meta name="twitter:image" content="https://example.com/546_green.webp" />
+
+    <!-- Preload hero WebP для кращого LCP -->
+    <link rel="preload" as="image" href="/546_green.webp" />
+
+    <!-- Schema.org Product -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Сукня великих розмірів для жінок plus size",
+        "image": [
+          "https://example.com/546_green.webp",
+          "https://example.com/546_blue.webp",
+          "https://example.com/546_black.webp",
+          "https://example.com/546_chocolate.webp"
+        ],
+        "description": "Стильна сукня великих розмірів з комфортною посадкою та 4 трендовими кольорами.",
+        "brand": {
+          "@type": "Brand",
+          "name": "YourBrand"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://example.com/dress-plus-size",
+          "priceCurrency": "UAH",
+          "price": "1490",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <div class="header__inner">
+        <div class="logo">YourBrand</div>
+        <nav class="nav" aria-label="Головна навігація сайту">
+          <a href="#about" class="nav__link">Про товар</a>
+          <a href="#sizes" class="nav__link">Розміри</a>
+          <a href="#reviews" class="nav__link">Відгуки</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO-БЛОК ЗІ СВАЙПЕРОМ -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <section class="hero__content" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="hero__title">
+              Сукня великих розмірів<br />
+              для жінок plus size
+            </h1>
+
+            <p class="hero__subtitle">
+              Стильна базова сукня зі щільної тканини, яка не просвічується.
+              Комфортна посадка по фігурі, 4 трендові кольори.
+            </p>
+
+            <p class="hero__price" aria-label="Ціна">
+              <span class="hero__price-current">1&nbsp;490 грн</span>
+              <span class="hero__price-old">1&nbsp;890 грн</span>
+            </p>
+
+            <!-- ВИБІР РОЗМІРУ -->
+            <section class="hero__sizes" aria-label="Вибір розміру">
+              <h2 class="hero__sizes-title">Доступні розміри:</h2>
+              <ul class="hero__sizes-list">
+                <li>
+                  <button
+                    class="size-btn size-btn--active"
+                    type="button"
+                    data-size="48–50"
+                  >
+                    48–50
+                  </button>
+                </li>
+                <li>
+                  <button class="size-btn" type="button" data-size="52–54">
+                    52–54
+                  </button>
+                </li>
+                <li>
+                  <button class="size-btn" type="button" data-size="56–58">
+                    56–58
+                  </button>
+                </li>
+                <li>
+                  <button class="size-btn" type="button" data-size="60–62">
+                    60–62
+                  </button>
+                </li>
+              </ul>
+            </section>
+
+            <!-- МІНІ-КОШИК / ВАШ ВИБІР -->
+            <section class="hero__selection" aria-label="Обрані параметри">
+              <h2 class="hero__selection-title">Ваш вибір:</h2>
+              <p class="hero__selection-text">
+                Колір: <span id="selected-color-text">Бутилка</span>, розмір:
+                <span id="selected-size-text">48–50</span>
+              </p>
+            </section>
+
+            <button id="order-btn" class="btn btn-primary" type="button">
+              Додати в кошик і замовити в Telegram
+            </button>
+
+            <p class="hero__note">
+              Натисніть на кнопку — бот у Telegram збере дані та оформить
+              замовлення. Ви зможете підтвердити замовлення з менеджером перед
+              відправкою.
+            </p>
+          </section>
+
+          <!-- SWIPER ПО КОЛЬОРАХ -->
+          <section
+            class="hero__gallery color-slider"
+            aria-label="Перегляд кольорів сукні"
+          >
+            <header class="color-slider__header">
+              <h2 class="color-slider__title">Кольори сукні</h2>
+              <p class="color-slider__subtitle">
+                Перегляньте, як сукня виглядає у різних відтінках.
+              </p>
+            </header>
+
+            <!-- БУТИЛКА -->
+            <figure
+              class="color-slide color-slide--active"
+              data-color-slide
+              data-color="Бутилка"
+              aria-label="Сукня кольору бутилка"
+            >
+              <picture>
+                <source srcset="/546_green.webp" type="image/webp" />
+                <img
+                  src="/546_green.JPG"
+                  alt="Сукня великих розмірів кольору бутилка"
+                  class="hero__image"
+                />
+              </picture>
+              <figcaption class="color-slide__caption">Бутилка</figcaption>
+            </figure>
+
+            <!-- ІНДИГО -->
+            <figure
+              class="color-slide"
+              data-color-slide
+              data-color="Індиго"
+              aria-label="Сукня кольору індиго"
+            >
+              <picture>
+                <source srcset="/546_blue.webp" type="image/webp" />
+                <img
+                  src="/546_blue.JPG"
+                  alt="Сукня великих розмірів кольору індиго"
+                  class="hero__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption class="color-slide__caption">Індиго</figcaption>
+            </figure>
+
+            <!-- ЧОРНИЙ -->
+            <figure
+              class="color-slide"
+              data-color-slide
+              data-color="Чорний"
+              aria-label="Сукня чорного кольору"
+            >
+              <picture>
+                <source srcset="/546_black.webp" type="image/webp" />
+                <img
+                  src="/546_black.JPG"
+                  alt="Чорна сукня великих розмірів"
+                  class="hero__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption class="color-slide__caption">Чорний</figcaption>
+            </figure>
+
+            <!-- ШОКОЛАД -->
+            <figure
+              class="color-slide"
+              data-color-slide
+              data-color="Шоколад"
+              aria-label="Сукня кольору шоколад"
+            >
+              <picture>
+                <source srcset="/546_chocolate.webp" type="image/webp" />
+                <img
+                  src="/546_chocolate.jpg"
+                  alt="Сукня великих розмірів кольору шоколад"
+                  class="hero__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption class="color-slide__caption">Шоколад</figcaption>
+            </figure>
+
+            <nav
+              class="color-slider__controls"
+              aria-label="Керування слайдером"
+            >
+              <button
+                class="color-slider__btn color-slider__btn--prev"
+                type="button"
+                aria-label="Попередній колір"
+              >
+                ‹
+              </button>
+              <button
+                class="color-slider__btn color-slider__btn--next"
+                type="button"
+                aria-label="Наступний колір"
+              >
+                ›
+              </button>
+            </nav>
+
+            <ol
+              class="color-slider__pagination"
+              aria-label="Обрати колір"
+              role="tablist"
+            >
+              <li>
+                <button
+                  type="button"
+                  class="color-slider__dot color-slider__dot--active"
+                  data-slide-to="0"
+                  role="tab"
+                  aria-label="Колір бутилка"
+                  aria-selected="true"
+                ></button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="color-slider__dot"
+                  data-slide-to="1"
+                  role="tab"
+                  aria-label="Колір індиго"
+                  aria-selected="false"
+                ></button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="color-slider__dot"
+                  data-slide-to="2"
+                  role="tab"
+                  aria-label="Чорний колір"
+                  aria-selected="false"
+                ></button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="color-slider__dot"
+                  data-slide-to="3"
+                  role="tab"
+                  aria-label="Колір шоколад"
+                  aria-selected="false"
+                ></button>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </section>
+
+      <!-- БЛОК ПРО ТОВАР -->
+      <section id="about" class="section">
+        <div class="container section__inner section__inner--two-cols">
+          <div>
+            <h2 class="section__title">Переваги сукні великих розмірів</h2>
+            <ul class="list">
+              <li class="list__item">
+                Комфортна посадка для фігур plus size без зайвого облягання.
+              </li>
+              <li class="list__item">
+                Щільна тканина, не просвічується та тримає форму.
+              </li>
+              <li class="list__item">
+                Поєднується і з кросівками, і з підборами — базова річ
+                гардеробу.
+              </li>
+              <li class="list__item">
+                Не потребує складного догляду — легко прати та прасувати.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="section__subtitle">Склад і догляд</h3>
+            <p class="text">
+              Тканина: трикотаж (приклад, заміниш на реальний склад). М’яка,
+              приємна до тіла, не колеться. Рекомендуємо прання при 30° на
+              делікатному режимі без агресивних відбілювачів.
+            </p>
+            <h3 class="section__subtitle">Кольори</h3>
+            <p class="text">
+              Доступні кольори: бутилка, індиго, чорний, шоколад.<br />
+              Обери колір у слайдері вище, а деталі можна уточнити у менеджера в
+              Telegram.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- РОЗМІРНА СІТКА -->
+      <section id="sizes" class="section section--gray">
+        <div class="container">
+          <h2 class="section__title">Розмірна сітка із замірами</h2>
+          <p class="text text--center">
+            Заміри по виробу, можуть трохи відрізнятися від стандартних таблиць
+            розмірів.
+          </p>
+          <div class="table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Розмір</th>
+                  <th>Обхват грудей (см)</th>
+                  <th>Обхват стегон (см)</th>
+                  <th>Довжина виробу / рукава (см)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>48–50</td>
+                  <td>110</td>
+                  <td>116</td>
+                  <td>110 / 62</td>
+                </tr>
+                <tr>
+                  <td>52–54</td>
+                  <td>118</td>
+                  <td>124</td>
+                  <td>112 / 63</td>
+                </tr>
+                <tr>
+                  <td>56–58</td>
+                  <td>126</td>
+                  <td>132</td>
+                  <td>114 / 64</td>
+                </tr>
+                <tr>
+                  <td>60–62</td>
+                  <td>134</td>
+                  <td>140</td>
+                  <td>116 / 65</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text text--center text--small">
+            Якщо сумніваєтесь із вибором — натисніть “Додати в кошик і замовити
+            в Telegram” та вкажіть зріст, вагу і параметри грудей/стегон.
+            Менеджер підкаже найкращий розмір.
+          </p>
+        </div>
+      </section>
+
+      <!-- ВІДГУКИ -->
+      <section id="reviews" class="section" aria-label="Відгуки покупчинь">
+        <div class="container">
+          <h2 class="section__title">Відгуки покупчинь</h2>
+          <div class="reviews">
+            <article class="review-card">
+              <h3 class="review-card__name">Оксана, 42 роки</h3>
+              <p class="review-card__text">
+                Сукня сіла чудово, не обтягує, але й не «мішок». Тканина щільна,
+                на осінь ідеально. Взяла розмір 52–54 на ОГ 112, ОС 118 —
+                посадка супер.
+              </p>
+            </article>
+            <article class="review-card">
+              <h3 class="review-card__name">Наталія, 37 років</h3>
+              <p class="review-card__text">
+                Замовляла в кольорі шоколад — виглядає дорого та акуратно. Ношу
+                і в офіс, і «на вихід». Подобається сервіс і швидка відповідь у
+                Telegram.
+              </p>
+            </article>
+            <article class="review-card">
+              <h3 class="review-card__name">Ірина, 45 років</h3>
+              <p class="review-card__text">
+                Зазвичай важко знайти красиву сукню на мій розмір, а тут сіла як
+                пошита під мене. Планую замовити ще один колір.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ФУТЕРНИЙ CTA -->
+      <section class="section section--accent">
+        <div class="container footer-cta">
+          <div>
+            <h2 class="section__title section__title--light">
+              Готові оформити замовлення?
+            </h2>
+            <p class="text text--light">
+              Оберіть колір і розмір, натисніть кнопку — бот у Telegram збере
+              дані та передасть замовлення менеджеру.
+            </p>
+          </div>
+          <button class="btn btn-light" id="order-btn-footer" type="button">
+            Додати в кошик і замовити в Telegram
+          </button>
+        </div>
+      </section>
+
+      <!-- Блок під політики / вимоги Google Ads -->
+      <section
+        class="section section--legal"
+        aria-label="Інформація про магазин"
+      >
+        <div class="container section__inner section__inner--two-cols">
+          <div>
+            <h2 class="section__title">Контакти</h2>
+            <p class="text">
+              Інтернет-магазин жіночого одягу YourBrand.<br />
+              Telegram: @yourbrand_support<br />
+              Email: support@example.com
+            </p>
+          </div>
+          <div>
+            <h2 class="section__title">Умови покупки</h2>
+            <p class="text text--small">
+              Повернення та обмін можливі протягом 14 днів згідно із
+              законодавством України, якщо товар не був у використанні. Детальні
+              умови, політика конфіденційності та обробка персональних даних
+              будуть доступні на окремій сторінці сайту.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__text">© 2025 YourBrand. Усі права захищено.</p>
+        <p class="footer__text footer__text--small">
+          Натискаючи кнопку замовлення, ви погоджуєтеся з обробкою персональних
+          даних.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/src/main.js" defer></script>
+  </body>
+</html>
